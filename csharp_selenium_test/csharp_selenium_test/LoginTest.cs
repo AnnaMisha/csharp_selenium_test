@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class MyFirstTest
+    public class LoginTest
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -22,15 +22,21 @@ namespace csharp_example
         }
 
         [Test]
-        public void FirstTest()
+        public void loginTest()
         {
-            driver.Url = "http://www.ya.ru/";
-            driver.FindElement(By.Id("text")).SendKeys("webdriver");
-            driver.FindElement(
-                By.XPath("/html/body/table/tbody/tr[2]/td/form/div[2]")
-                ).Click();
-            Thread.Sleep(5000);
-            //wait.Until(ExpectedConditions.TitleIs("webdriver - Поиск в Google"));
+            driver.Url = "http://localhost/litecart/admin/login.php";
+            try
+            {
+                driver.FindElement(By.Name("username")).SendKeys("admin");
+                driver.FindElement(By.Name("password")).SendKeys("admin");
+                driver.FindElement(By.Name("login")).Click();
+            }
+            catch
+            {
+                
+            }
+            wait.Until(ExpectedConditions.TitleIs("My Store"));
+            Thread.Sleep(1000);
         }
 
         [TearDown]
