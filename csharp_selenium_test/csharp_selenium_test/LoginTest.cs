@@ -3,7 +3,8 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-//using OpenQA.Selenium.IE;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
 namespace csharp_example
@@ -17,7 +18,18 @@ namespace csharp_example
         [SetUp]
         public void start()
         {
-            driver = new ChromeDriver();
+            //driver = new ChromeDriver();
+            //driver = new FirefoxDriver();
+            //InternetExplorerOptions options = new InternetExplorerOptions();
+            //options.RequireWindowFocus = true;
+            //driver = new InternetExplorerDriver(options);
+
+            //old scheme for Firefox
+            FirefoxOptions options = new FirefoxOptions();
+            options.UseLegacyImplementation = false;            
+            options.BrowserExecutableLocation =
+                @"c:\Program Files\Firefox Nightly\firefox.exe";
+            driver = new FirefoxDriver(options);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
         }
 
