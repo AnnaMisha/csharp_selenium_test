@@ -17,7 +17,7 @@ namespace csharp_selenium_test
         private IWebDriver driver;
         private WebDriverWait wait;
 
-        private static void loginToAdmin(IWebDriver driver, WebDriverWait wait)
+        public static void loginToAdmin(IWebDriver driver, WebDriverWait wait)
         {
             driver.Url = "http://localhost/litecart/admin/login.php";
             try
@@ -33,7 +33,7 @@ namespace csharp_selenium_test
             wait.Until(ExpectedConditions.TitleIs("My Store"));
         }
 
-        private static IWebElement[][] getTable(IWebDriver driver, string cssSelector, 
+        public static IWebElement[][] getTable(IWebDriver driver, string cssSelector, 
             bool transpose, int upperOffset, int lowerOffset)
         {
             IWebElement[][] result;

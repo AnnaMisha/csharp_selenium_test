@@ -69,6 +69,7 @@
     <Compile Include="StickerMainPageTest.cs" />
     <Compile Include="styleTest.cs" />
     <Compile Include="userSignUpTest.cs" />
+    <Compile Include="windowTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
