@@ -64,7 +64,9 @@
     <Compile Include="cartTest.cs" />
     <Compile Include="CountriesTest.cs" />
     <Compile Include="FirstTest.cs" />
+    <Compile Include="GridTest.cs" />
     <Compile Include="LoginTest.cs" />
+    <Compile Include="LogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StickerMainPageTest.cs" />
     <Compile Include="styleTest.cs" />
